@@ -15,8 +15,11 @@ class base(object):
         self.value          = None  # current value of primitive.
 
     def mutate(self):
+        # TODO: Turn mutate() into an iterator, easier to mutate and throw.
         """
         Mutate the primitive by stepping through the fuzz library, return False on completion.
+
+        Iterates until the mutant_index == self.num_mutation()
 
         :rtype:  Boolean
         :returns: True on success, False otherwise.
