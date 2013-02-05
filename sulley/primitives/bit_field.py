@@ -6,22 +6,24 @@ class bit_field (base):
         """
         The bit field primitive represents a number of variable length and is used to define all other integer types.
 
-        @type  value:      Integer
-        @param value:      Default integer value
-        @type  width:      Integer
-        @param width:      Width of bit fields
-        @type  endian:     Character
-        @param endian:     (Optional, def=LITTLE_ENDIAN) Endianess of the bit field (LITTLE_ENDIAN: <, BIG_ENDIAN: >)
-        @type  format:     String
-        @param format:     (Optional, def=binary) Output format, "binary" or "ascii"
-        @type  signed:     Boolean
-        @param signed:     (Optional, def=False) Make size signed vs. unsigned (applicable only with format="ascii")
-        @type  full_range: Boolean
-        @param full_range: (Optional, def=False) If enabled the field mutates through *all* possible values.
-        @type  fuzzable:   Boolean
-        @param fuzzable:   (Optional, def=True) Enable/disable fuzzing of this primitive
-        @type  name:       String
-        @param name:       (Optional, def=None) Specifying a name gives you direct access to a primitive
+        Used to sub-class out words, qwords, bytes, and any other binary blocks.
+
+        :type  value:      Integer
+        :param value:      Default integer value
+        :type  width:      Integer
+        :param width:      Width of bit fields
+        :type  endian:     Character
+        :param endian:     (Optional, def=LITTLE_ENDIAN) Endianess of the bit field (LITTLE_ENDIAN: <, BIG_ENDIAN: >)
+        :type  format:     String
+        :param format:     (Optional, def=binary) Output format, "binary" or "ascii"
+        :type  signed:     Boolean
+        :param signed:     (Optional, def=False) Make size signed vs. unsigned (applicable only with format="ascii")
+        :type  full_range: Boolean
+        :param full_range: (Optional, def=False) If enabled the field mutates through *all* possible values.
+        :type  fuzzable:   Boolean
+        :param fuzzable:   (Optional, def=True) Enable/disable fuzzing of this primitive
+        :type  name:       String
+        :param name:       (Optional, def=None) Specifying a name gives you direct access to a primitive
         """
 
         assert(type(value) is int or type(value) is long)
@@ -87,8 +89,8 @@ class bit_field (base):
         """
         Add the supplied integer and border cases to the integer fuzz heuristics library.
 
-        @type  integer: Int
-        @param integer: Integer to append to fuzz heuristics
+        :type  integer: Int
+        :param integer: Integer to append to fuzz heuristics
         """
 
         for i in xrange(-10, 10):
@@ -161,10 +163,10 @@ class bit_field (base):
         """
         Convert a number to a binary string.
 
-        @type  number:    Integer
-        @param number:    (Optional, def=self.value) Number to convert
-        @type  bit_count: Integer
-        @param bit_count: (Optional, def=self.width) Width of bit string
+        :type  number:    Integer
+        :param number:    (Optional, def=self.value) Number to convert
+        :type  bit_count: Integer
+        :param bit_count: (Optional, def=self.width) Width of bit string
 
         :rtype:  String
         :returns: Bit string
@@ -183,8 +185,8 @@ class bit_field (base):
         """
         Convert a binary string to a decimal number.
 
-        @type  binary: String
-        @param binary: Binary string
+        :type  binary: String
+        :param binary: Binary string
 
         :rtype:  Integer
         :returns: Converted bit string
