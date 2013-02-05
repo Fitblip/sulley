@@ -6,7 +6,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.intersphinx',
     'sphinx_http_domain',
-    'djangodocs',
+    'sulley',
     ]
 templates_path = ['_templates']
 source_suffix = '.rst'
