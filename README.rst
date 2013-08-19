@@ -2,8 +2,8 @@
 sulley
 ===============================
 
-.. image:: https://badge.fury.io/py/sulley.png
-    :target: http://badge.fury.io/py/sulley
+	.. image:: https://badge.fury.io/py/sulley.png
+    		:target: http://badge.fury.io/py/sulley
     
 .. image:: https://travis-ci.org/fitblip/sulley.png?branch=master
         :target: https://travis-ci.org/fitblip/sulley
